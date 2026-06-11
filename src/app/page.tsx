@@ -27,6 +27,10 @@ const whatsappPhone = "917798979678";
 const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
   "नमस्कार Bhaavesh Electrician, मला भोसरी/पुणे परिसरात इलेक्ट्रिशियन सेवा हवी आहे.",
 )}`;
+const getServiceWhatsappHref = (serviceTitle: string) =>
+  `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+    `नमस्कार Bhaavesh Electrician, मला "${serviceTitle}" या सेवेसाठी enquiry करायची आहे. मी भोसरी/पुणे परिसरातून संपर्क करत आहे.`,
+  )}`;
 const directionsHref =
   "https://www.google.com/maps/search/?api=1&query=Bhaavesh%20Electrician%20Adarsh%20Nagar%20Bhosari%20Pimpri-Chinchwad%20Maharashtra%20411039";
 
@@ -114,6 +118,15 @@ const quickFacts = [
   { label: "मुख्य परिसर", value: "भोसरी, PCMC, पुणे", icon: MapPin },
   { label: "Google reviews", value: "4.3 rating", icon: Star },
   { label: "थेट फोन", value: phoneDisplay, icon: PhoneCall },
+];
+
+const personalSignals = [
+  "Bhaavesh स्वतः phone उचलतो",
+  "भोसरी base, Pune-PCMC visit",
+  "पहिले problem समजून घेतो",
+  "कामानंतर safety check",
+  "Emergency साठी 24 तास call",
+  "Adarsh Nagar पासून जलद visit",
 ];
 
 const workSteps = [
@@ -307,28 +320,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-y border-[#dfd4bd] bg-[#f4ead4]">
+        <div className="live-strip mx-auto max-w-7xl overflow-hidden px-4 py-3 sm:px-6 lg:px-10">
+          <div className="live-track flex w-max gap-3">
+            {[...personalSignals, ...personalSignals].map((signal, index) => (
+              <span
+                key={`${signal}-${index}`}
+                className="inline-flex min-h-9 items-center rounded-full border border-[#d2c29e] bg-white/72 px-4 text-sm font-black text-[#303946]"
+              >
+                {signal}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="services" className="section-pad">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="max-w-3xl">
-            <p className="section-kicker">सेवा स्पष्ट, भाषा सोपी</p>
-            <h2 className="section-title">कोणते electrical काम हवे आहे?</h2>
-            <p className="section-copy">
-              खालील सेवा पाहून लगेच कळेल की कोणत्या कामासाठी फोन करायचा. घरातील
-              छोटा fault असो किंवा दुकान-ऑफिसचे काम, आधी समस्या स्पष्ट समजून
-              घेतली जाते आणि मग योग्य उपाय सांगितला जातो.
-            </p>
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1fr_22rem] lg:items-end">
+            <div className="max-w-3xl">
+              <p className="section-kicker">सेवा स्पष्ट, भाषा सोपी</p>
+              <h2 className="section-title">कोणते electrical काम हवे आहे?</h2>
+              <p className="section-copy">
+                खालील सेवा पाहून लगेच कळेल की कोणत्या कामासाठी फोन करायचा.
+                घरातील छोटा fault असो किंवा दुकान-ऑफिसचे काम, आधी समस्या
+                स्पष्ट समजून घेतली जाते आणि मग योग्य उपाय सांगितला जातो.
+              </p>
+            </div>
+
+            <div className="rounded-lg border border-[#d7c9ab] bg-[#181b20] p-4 text-white shadow-[0_14px_34px_rgba(24,27,32,0.12)]">
+              <p className="text-sm font-black text-[#f3b743]">Bhaavesh कडून</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-white/78">
+                Call करताना area, problem आणि तातडी आधी विचारली जाते. शक्य
+                असेल तर phone वरच अंदाज सांगितला जातो.
+              </p>
+            </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="service-rail mt-7 grid auto-cols-[minmax(16.25rem,82vw)] grid-flow-col items-stretch gap-3 overflow-x-auto pb-3 md:grid-flow-row md:grid-cols-2 md:overflow-visible md:pb-0 xl:grid-cols-3">
             {services.map((service, index) => {
               const Icon = service.icon;
+              const serviceWhatsappHref = getServiceWhatsappHref(service.title);
               return (
                 <article
                   key={service.title}
-                  className="service-card flex h-full min-h-0 flex-col overflow-hidden rounded-md border border-[#ddd3bf] bg-white shadow-[0_10px_28px_rgba(24,27,32,0.06)]"
+                  className="service-card flex h-full min-h-0 snap-start flex-col overflow-hidden rounded-md border border-[#ddd3bf] bg-white shadow-[0_8px_22px_rgba(24,27,32,0.055)]"
                   style={{ animationDelay: `${index * 75}ms` }}
                 >
-                  <div className="relative h-[9.75rem] overflow-hidden bg-[#d9d4c4] sm:h-40 lg:h-[10rem] xl:h-[10.75rem]">
+                  <div className="relative h-[8.25rem] overflow-hidden bg-[#d9d4c4] sm:h-[8.75rem] lg:h-[8.5rem] xl:h-[9rem]">
                     <Image
                       src={service.image}
                       alt={`${service.title} सेवा दाखवणारा फोटो`}
@@ -338,35 +377,44 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(0deg,rgba(24,27,32,0.30),rgba(24,27,32,0))]" />
                   </div>
-                  <div className="flex flex-1 flex-col p-4 sm:p-5">
-                    <div className="mb-3 flex min-h-9 items-center justify-between gap-3">
+                  <div className="flex flex-1 flex-col p-3.5 sm:p-4">
+                    <div className="mb-2.5 flex min-h-8 items-center justify-between gap-3">
                       <span className="rounded bg-[#f1e7cd] px-2.5 py-1 text-[0.78rem] font-black leading-none text-[#79400e]">
                         {service.tag}
                       </span>
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#1b1f26] text-[#f3b743]">
-                        <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#1b1f26] text-[#f3b743]">
+                        <Icon className="h-4 w-4" aria-hidden="true" />
                       </span>
                     </div>
-                    <h3 className="text-[1.18rem] font-black leading-7 text-[#181b20] sm:min-h-14 sm:text-[1.24rem]">
+                    <h3 className="text-[1.05rem] font-black leading-6 text-[#181b20] sm:text-[1.12rem]">
                       {service.title}
                     </h3>
-                    <p className="mt-2 text-[0.98rem] font-medium leading-7 text-[#5d6470] sm:min-h-[5.25rem]">
+                    <p className="service-card-copy mt-1.5 text-[0.92rem] font-medium leading-6 text-[#5d6470]">
                       {service.description}
                     </p>
-                    <ul className="mt-auto space-y-1.5 border-t border-[#ece4d4] pt-4">
-                      {service.points.map((point) => (
+                    <ul className="mt-3 space-y-1 border-t border-[#ece4d4] pt-3">
+                      {service.points.slice(0, 2).map((point) => (
                         <li
                           key={point}
-                          className="flex items-start gap-2 text-[0.9rem] font-bold leading-6 text-[#303946]"
+                          className="flex items-start gap-1.5 text-[0.84rem] font-bold leading-5 text-[#303946]"
                         >
                           <CheckCircle2
-                            className="mt-1 h-3.5 w-3.5 shrink-0 text-[#2f6f9f]"
+                            className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2f6f9f]"
                             aria-hidden="true"
                           />
                           {point}
                         </li>
                       ))}
                     </ul>
+                    <a
+                      href={serviceWhatsappHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-[#1b1f26] px-3 text-[0.9rem] font-black text-white transition hover:bg-[#2a303a]"
+                    >
+                      <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                      WhatsApp enquiry
+                    </a>
                   </div>
                 </article>
               );

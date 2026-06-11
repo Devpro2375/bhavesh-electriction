@@ -41,6 +41,8 @@ const serviceOptions = [
   "Emergency repair",
 ];
 
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitState, setSubmitState] = useState<SubmitState>({
@@ -54,6 +56,7 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const startedAt = Date.now();
     setSubmitState({ type: "loading", message: "Enquiry तयार होत आहे..." });
 
     try {
@@ -72,12 +75,22 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
         throw new Error(payload.message || "Details तपासा आणि पुन्हा प्रयत्न करा.");
       }
 
+      const remainingDelay = 650 - (Date.now() - startedAt);
+      if (remainingDelay > 0) {
+        await wait(remainingDelay);
+      }
+
       setSubmitState({
         type: "success",
         message: payload.message || "Enquiry तयार झाली.",
         whatsappUrl: payload.whatsappUrl,
       });
     } catch (error) {
+      const remainingDelay = 650 - (Date.now() - startedAt);
+      if (remainingDelay > 0) {
+        await wait(remainingDelay);
+      }
+
       setSubmitState({
         type: "error",
         message:
@@ -186,18 +199,32 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
       </label>
 
       <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <button
-          type="submit"
-          disabled={submitState.type === "loading"}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#1b1f26] px-5 text-sm font-black text-white transition hover:bg-[#2a303a] disabled:cursor-not-allowed disabled:opacity-70"
-        >
-          {submitState.type === "loading" ? (
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-          ) : (
-            <Send className="h-4 w-4" aria-hidden="true" />
-          )}
-          Enquiry तयार करा
-        </button>
+        {submitState.type === "success" ? (
+          <a
+            href={submitState.whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="enquiry-action enquiry-action-ready inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#234d75] px-5 text-sm font-black text-white"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            WhatsApp वर message पाठवा
+          </a>
+        ) : (
+          <button
+            type="submit"
+            disabled={submitState.type === "loading"}
+            className="enquiry-action inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#1b1f26] px-5 text-sm font-black text-white disabled:cursor-not-allowed disabled:opacity-80"
+          >
+            {submitState.type === "loading" ? (
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+            ) : (
+              <Send className="h-4 w-4" aria-hidden="true" />
+            )}
+            {submitState.type === "loading"
+              ? "WhatsApp message तयार होत आहे..."
+              : "Enquiry तयार करा"}
+          </button>
+        )}
         <a
           href={phoneHref}
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#c9bea5] px-5 text-sm font-black text-[#181b20] transition hover:bg-[#f4eedf]"
@@ -209,7 +236,7 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
 
       {submitState.type !== "idle" && (
         <div
-          className={`mt-5 rounded-lg border p-4 text-sm font-bold leading-6 ${
+          className={`enquiry-status-card mt-5 rounded-lg border p-4 text-sm font-bold leading-6 ${
             submitState.type === "error"
               ? "border-[#e0b8a3] bg-[#fff2ed] text-[#7b2d12]"
               : "border-[#b8cce0] bg-[#edf4fb] text-[#234d75]"
@@ -221,17 +248,6 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
             )}
             <p>{submitState.message}</p>
           </div>
-          {submitState.type === "success" && (
-            <a
-              href={submitState.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-[#234d75] px-4 text-white"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              WhatsApp वर पाठवा
-            </a>
-          )}
         </div>
       )}
 
