@@ -26,12 +26,14 @@
 }
 
 html {
+  width: 100%;
   max-width: 100%;
   overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
   background:
     linear-gradient(90deg, rgba(75, 80, 88, 0.035) 1px, transparent 1px),
@@ -131,6 +133,9 @@ textarea {
 }
 
 .live-strip {
+  width: 100%;
+  max-width: 100%;
+  contain: inline-size;
   mask-image: linear-gradient(
     90deg,
     transparent,
@@ -145,6 +150,9 @@ textarea {
 }
 
 .service-rail {
+  width: 100%;
+  max-width: 100%;
+  contain: inline-size;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;

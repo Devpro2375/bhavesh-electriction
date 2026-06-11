@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     }
 
     const whatsappMessage = [
-      "नमस्कार Bhaavesh Electrician,",
+      "नमस्कार Bhavesh Electrician,",
       "",
       `नाव: ${name}`,
       `फोन: ${phone}`,
