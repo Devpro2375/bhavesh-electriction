@@ -9,11 +9,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "bhavesh Electrician, Bhosari | 24 तास Pune Electrician",
+  title: "Bhaavesh Electrician, Bhosari | 24 तास Pune Electrician",
   description:
     "भोसरी, पिंपरी-चिंचवड आणि पुणे परिसरात 24 तास electrician service. Wiring, MCB, switchboard, fan-light fitting, inverter, earthing आणि emergency repair.",
   keywords: [
-    "bhavesh Electrician Bhosari",
+    "Bhaavesh Electrician Bhosari",
     "electrician in Pune",
     "electrician in Bhosari",
     "Pimpri Chinchwad electrician",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "पुणे electrician",
   ],
   openGraph: {
-    title: "bhavesh Electrician, Bhosari",
+    title: "Bhaavesh Electrician, Bhosari",
     description:
       "पुणे आणि PCMC परिसरात घर, दुकान, ऑफिस आणि सोसायटीसाठी 24 तास electrician service.",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/images/hero-bhaavesh-electrician-v2.png",
         width: 1536,
         height: 864,
-        alt: "bhavesh Electrician in Bhosari",
+        alt: "Bhaavesh Electrician in Bhosari",
       },
     ],
   },

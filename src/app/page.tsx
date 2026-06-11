@@ -28,7 +28,7 @@ const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
   "नमस्कार Bhaavesh Electrician, मला भोसरी/पुणे परिसरात इलेक्ट्रिशियन सेवा हवी आहे.",
 )}`;
 const directionsHref =
-  "https://www.google.com/maps/search/?api=1&query=bhavesh%20Electrician%20Adarsh%20Nagar%20Bhosari%20Pimpri-Chinchwad%20Maharashtra%20411039";
+  "https://www.google.com/maps/search/?api=1&query=Bhaavesh%20Electrician%20Adarsh%20Nagar%20Bhosari%20Pimpri-Chinchwad%20Maharashtra%20411039";
 
 type Service = {
   title: string;
@@ -78,21 +78,21 @@ const services: Service[] = [
   },
   {
     title: "दुकान, ऑफिस आणि सोसायटी",
-    tag: "Commercial",
+    tag: "दुकान / ऑफिस",
     description:
       "दुकानाचे पॉइंट, ऑफिस wiring, सोसायटी common lights, pump starter आणि routine maintenance साठी visit.",
     image: "/images/service-no-face-shop-society.png",
     icon: Building2,
-    points: ["shop/office wiring", "common area lighting", "maintenance visit"],
+    points: ["दुकान/ऑफिस wiring", "common area lights", "maintenance visit"],
   },
   {
     title: "24 तास तातडीची दुरुस्ती",
-    tag: "Emergency",
+    tag: "तत्काळ",
     description:
       "रात्री लाईट गेली, burning smell आली, sparking sound येत असेल किंवा main बंद झाला तर लगेच फोन करा.",
     image: "/images/service-no-face-emergency.png",
     icon: Clock,
-    points: ["फोनवर प्राथमिक मार्गदर्शन", "urgent visit", "safe temporary fix"],
+    points: ["फोनवर प्राथमिक मार्गदर्शन", "तत्काळ visit", "सुरक्षित temporary fix"],
   },
 ];
 
@@ -140,7 +140,7 @@ const workSteps = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Electrician",
-  name: "bhavesh Electrician, Bhosari",
+  name: "Bhaavesh Electrician, Bhosari",
   image: "/images/hero-bhaavesh-electrician-v2.png",
   telephone: "+91 77989 79678",
   address: {
@@ -163,13 +163,13 @@ const jsonLd = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] pb-20 text-[var(--foreground)] md:pb-0">
+    <main className="min-h-screen overflow-x-clip bg-[var(--background)] pb-24 text-[var(--foreground)] md:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative isolate min-h-[92svh] overflow-hidden bg-[#181b20] text-white md:min-h-[86svh]">
+      <section className="relative isolate min-h-[820px] overflow-hidden bg-[#181b20] text-white md:min-h-[86svh]">
         <Image
           src="/images/hero-bhaavesh-electrician-v2.png"
           alt="भोसरीमध्ये electrical panel तपासत असलेले Bhaavesh Electrician"
@@ -182,7 +182,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_50%,rgba(243,183,67,0.14),transparent_34%)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(0deg,rgba(18,21,26,0.92),rgba(18,21,26,0))]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[92svh] max-w-7xl flex-col px-4 py-4 sm:px-6 md:min-h-[86svh] lg:px-10">
+        <div className="relative z-10 mx-auto flex min-h-[820px] max-w-7xl flex-col px-4 py-4 sm:px-6 md:min-h-[86svh] lg:px-10">
           <header className="flex items-center justify-between gap-3">
             <a href="#top" className="flex min-w-0 items-center gap-3">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/24 bg-white/12 backdrop-blur">
@@ -190,7 +190,7 @@ export default function HomePage() {
               </span>
               <span className="min-w-0 leading-tight">
                 <span className="block truncate text-base font-black sm:text-lg">
-                  Bhavesh Electrician
+                  Bhaavesh Electrician
                 </span>
                 <span className="block text-xs text-white/74 sm:text-sm">
                   Bhosari • Pune
@@ -212,7 +212,7 @@ export default function HomePage() {
 
             <a
               href={phoneHref}
-              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-md bg-[#f3b743] px-3 text-sm font-black text-[#172115] shadow-[0_10px_30px_rgba(0,0,0,0.22)] transition hover:bg-[#ffd06a] sm:px-4"
+              className="hidden min-h-11 shrink-0 items-center justify-center gap-2 rounded-md bg-[#f3b743] px-3 text-sm font-black text-[#181b20] shadow-[0_10px_30px_rgba(0,0,0,0.22)] transition hover:bg-[#ffd06a] sm:inline-flex sm:px-4"
             >
               <PhoneCall className="h-4 w-4" aria-hidden="true" />
               <span className="hidden sm:inline">फोन करा</span>
@@ -221,25 +221,37 @@ export default function HomePage() {
           </header>
 
           <div id="top" className="flex flex-1 items-center py-12 sm:py-16 md:py-20">
-            <div className="max-w-3xl">
+            <div className="w-full min-w-0 max-w-[22rem] sm:max-w-[34rem] md:max-w-3xl">
               <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-md border border-white/22 bg-white/10 px-3 py-2 text-sm font-bold leading-6 text-white/88 backdrop-blur">
                 <MapPin className="h-4 w-4 shrink-0 text-[#f3b743]" aria-hidden="true" />
                 भोसरी, पिंपरी-चिंचवड आणि पुणे परिसर
               </div>
 
-              <h1 className="max-w-[22rem] break-words font-serif text-[2.45rem] font-black leading-[1.08] text-white sm:max-w-3xl sm:text-5xl md:text-6xl lg:max-w-4xl lg:text-7xl">
-                Bhavesh Electrician, Bhosari
+              <h1 className="max-w-[20rem] break-words font-serif text-[2.22rem] font-black leading-[1.06] text-white [overflow-wrap:anywhere] sm:max-w-3xl sm:text-5xl md:text-6xl lg:max-w-4xl lg:text-7xl">
+                Bhaavesh Electrician, Bhosari
               </h1>
-              <p className="mt-5 max-w-2xl text-lg font-medium leading-8 text-white/90 sm:text-xl sm:leading-9">
-                घर, दुकान, ऑफिस आणि सोसायटीसाठी विश्वासार्ह इलेक्ट्रिशियन सेवा.
-                Wiring, MCB, फॅन-लाईट फिटिंग, इन्व्हर्टर, अर्थिंग आणि urgent
-                repair साठी 24 तास फोन उपलब्ध.
+              <p className="mt-5 w-full max-w-full text-[1.04rem] font-medium leading-8 text-white/90 [overflow-wrap:anywhere] sm:max-w-2xl sm:text-xl sm:leading-9">
+                <span className="block sm:inline">
+                  घर, दुकान, ऑफिस आणि सोसायटीसाठी
+                </span>{" "}
+                <span className="block sm:inline">
+                  विश्वासार्ह इलेक्ट्रिशियन सेवा.
+                </span>{" "}
+                <span className="block sm:inline">
+                  Wiring, MCB, फॅन-लाईट फिटिंग,
+                </span>{" "}
+                <span className="block sm:inline">
+                  इन्व्हर्टर, अर्थिंग आणि urgent repair.
+                </span>{" "}
+                <span className="block sm:inline">
+                  24 तास फोन उपलब्ध.
+                </span>
               </p>
 
-              <div className="mt-8 grid grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
+              <div className="mt-8 grid w-full max-w-full grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <a
                   href={phoneHref}
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md bg-[#f3b743] px-5 text-base font-black text-[#172115] transition hover:bg-[#ffd06a]"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md bg-[#f3b743] px-5 text-base font-black text-[#181b20] transition hover:bg-[#ffd06a]"
                 >
                   <PhoneCall className="h-5 w-5" aria-hidden="true" />
                   आता फोन करा
@@ -254,7 +266,7 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="mt-8 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="mt-8 grid w-full max-w-full grid-cols-1 gap-3 sm:max-w-2xl sm:grid-cols-3">
                 <div className="rounded-md border border-white/14 bg-white/10 p-4 backdrop-blur">
                   <p className="text-sm text-white/64">फोन नंबर</p>
                   <p className="mt-1 text-lg font-black">{phoneDisplay}</p>
@@ -299,55 +311,56 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="max-w-3xl">
             <p className="section-kicker">सेवा स्पष्ट, भाषा सोपी</p>
-            <h2 className="section-title">तुमचे electrical काम कोणते आहे?</h2>
+            <h2 className="section-title">कोणते electrical काम हवे आहे?</h2>
             <p className="section-copy">
-              खालील सेवा पाहिल्यावर ग्राहकाला लगेच समजेल की कोणत्या कामासाठी
-              फोन करायचा. घरगुती काम असो किंवा दुकान-ऑफिसचे काम, आधी समस्या
-              समजून घेतली जाते आणि मग योग्य उपाय सांगितला जातो.
+              खालील सेवा पाहून लगेच कळेल की कोणत्या कामासाठी फोन करायचा. घरातील
+              छोटा fault असो किंवा दुकान-ऑफिसचे काम, आधी समस्या स्पष्ट समजून
+              घेतली जाते आणि मग योग्य उपाय सांगितला जातो.
             </p>
           </div>
 
-          <div className="mt-9 grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service) => {
+          <div className="mt-8 grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <article
                   key={service.title}
-                  className="group flex h-full flex-col overflow-hidden rounded-lg border border-[#d8d0bd] bg-white shadow-[0_18px_46px_rgba(24,27,32,0.08)] transition hover:-translate-y-1 hover:shadow-[0_26px_64px_rgba(24,27,32,0.13)]"
+                  className="service-card flex h-full min-h-0 flex-col overflow-hidden rounded-md border border-[#ddd3bf] bg-white shadow-[0_10px_28px_rgba(24,27,32,0.06)]"
+                  style={{ animationDelay: `${index * 75}ms` }}
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-[#d9d4c4]">
+                  <div className="relative h-[9.75rem] overflow-hidden bg-[#d9d4c4] sm:h-40 lg:h-[10rem] xl:h-[10.75rem]">
                     <Image
                       src={service.image}
                       alt={`${service.title} सेवा दाखवणारा फोटो`}
                       fill
                       sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition duration-500 group-hover:scale-[1.035]"
+                      className="service-card-image object-cover"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-20 bg-[linear-gradient(0deg,rgba(24,27,32,0.42),rgba(24,27,32,0))]" />
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(0deg,rgba(24,27,32,0.30),rgba(24,27,32,0))]" />
                   </div>
-                  <div className="flex flex-1 flex-col p-5 sm:p-6">
-                    <div className="mb-4 flex min-h-10 items-center justify-between gap-3">
-                      <span className="rounded-md bg-[#f1e7cd] px-3 py-1 text-xs font-black text-[#79400e]">
+                  <div className="flex flex-1 flex-col p-4 sm:p-5">
+                    <div className="mb-3 flex min-h-9 items-center justify-between gap-3">
+                      <span className="rounded bg-[#f1e7cd] px-2.5 py-1 text-[0.78rem] font-black leading-none text-[#79400e]">
                         {service.tag}
                       </span>
-                      <span className="flex h-10 w-10 items-center justify-center rounded-md bg-[#1b1f26] text-[#f3b743]">
-                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#1b1f26] text-[#f3b743]">
+                        <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
                       </span>
                     </div>
-                    <h3 className="text-[1.45rem] font-black leading-8 text-[#181b20]">
+                    <h3 className="text-[1.18rem] font-black leading-7 text-[#181b20] sm:min-h-14 sm:text-[1.24rem]">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-[1.05rem] font-medium leading-7 text-[#5d6470]">
+                    <p className="mt-2 text-[0.98rem] font-medium leading-7 text-[#5d6470] sm:min-h-[5.25rem]">
                       {service.description}
                     </p>
-                    <ul className="mt-auto space-y-2 border-t border-[#ece4d4] pt-5">
+                    <ul className="mt-auto space-y-1.5 border-t border-[#ece4d4] pt-4">
                       {service.points.map((point) => (
                         <li
                           key={point}
-                          className="flex items-start gap-2 text-sm font-bold leading-6 text-[#26362f]"
+                          className="flex items-start gap-2 text-[0.9rem] font-bold leading-6 text-[#303946]"
                         >
                           <CheckCircle2
-                            className="mt-0.5 h-4 w-4 shrink-0 text-[#2d5d84]"
+                            className="mt-1 h-3.5 w-3.5 shrink-0 text-[#2f6f9f]"
                             aria-hidden="true"
                           />
                           {point}
@@ -369,7 +382,7 @@ export default function HomePage() {
             <h2 className="section-title">भोसरी base, Pune आणि PCMC मध्ये service.</h2>
             <p className="section-copy">
               Adarsh Nagar, Bhosari येथून घर, दुकान, ऑफिस आणि सोसायटीसाठी visit
-              केली जाते. जवळचा भाग असेल तर timing जलद मिळू शकते.
+              केली जाते. जवळचा भाग असेल तर timing लवकर मिळू शकते.
             </p>
           </div>
 
@@ -401,7 +414,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="rounded-lg border border-[#cdbf9d] bg-white/78 p-5">
-                <Store className="h-6 w-6 text-[#2d5d84]" aria-hidden="true" />
+                <Store className="h-6 w-6 text-[#2f6f9f]" aria-hidden="true" />
                 <p className="mt-3 text-xl font-black">दुकान / ऑफिस</p>
                 <p className="mt-2 text-sm leading-6 text-[#5d625d]">
                   counter points, signage, AC line आणि lighting setup.
@@ -441,7 +454,7 @@ export default function HomePage() {
               </a>
               <a
                 href={phoneHref}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#c9bea5] px-5 text-sm font-black text-[#13251f] transition hover:bg-[#f4eedf]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#c9bea5] px-5 text-sm font-black text-[#181b20] transition hover:bg-[#f4eedf]"
               >
                 <PhoneCall className="h-4 w-4" aria-hidden="true" />
                 {phoneDisplay}
@@ -454,7 +467,7 @@ export default function HomePage() {
               {serviceAreas.map((area) => (
                 <div
                   key={area}
-                  className="flex min-h-13 items-center gap-2 rounded-md bg-white px-3 py-3 text-sm font-black text-[#1d2f28] shadow-sm"
+                  className="flex min-h-13 items-center gap-2 rounded-md bg-white px-3 py-3 text-sm font-black text-[#181b20] shadow-sm"
                 >
                   <MapPin className="h-4 w-4 shrink-0 text-[#b65d1e]" aria-hidden="true" />
                   {area}
@@ -478,7 +491,7 @@ export default function HomePage() {
             <div>
               <p className="section-kicker text-[#f3b743]">कामाची पद्धत</p>
               <h2 className="font-serif text-4xl font-black leading-tight sm:text-5xl">
-                आधी safety, मग दुरुस्ती.
+                आधी सुरक्षितता, मग दुरुस्ती.
               </h2>
               <p className="mt-5 text-lg leading-8 text-white/76">
                 ग्राहकाला काय बिघडले आहे, किती तातडीचे आहे आणि पुढचा step काय
@@ -494,7 +507,7 @@ export default function HomePage() {
                     key={step.title}
                     className="grid grid-cols-[auto_1fr] gap-4 rounded-lg border border-white/12 bg-white/7 p-4 sm:p-5"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-md bg-[#f3b743] text-[#14231d]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-md bg-[#f3b743] text-[#181b20]">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <div>
@@ -518,10 +531,10 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-9 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
           <div>
             <p className="section-kicker">संपर्क</p>
-            <h2 className="section-title">Urgent काम असेल तर थेट फोन करा.</h2>
+              <h2 className="section-title">Urgent काम असेल तर थेट फोन करा.</h2>
             <p className="section-copy">
-              Routine कामासाठी form भरा. Form submit केल्यावर WhatsApp message
-              तयार होईल, त्यामुळे details पुन्हा type कराव्या लागणार नाहीत.
+              Routine कामासाठी form भरा. Submit केल्यावर WhatsApp message तयार
+              होईल, त्यामुळे details पुन्हा type कराव्या लागणार नाहीत.
             </p>
 
             <div className="mt-7 grid grid-cols-1 gap-4">
@@ -529,14 +542,14 @@ export default function HomePage() {
                 href={phoneHref}
                 className="flex items-center gap-4 rounded-lg border border-[#d9d4c4] bg-white p-4 shadow-sm transition hover:bg-[#f8f5ed] sm:p-5"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-[#f3b743] text-[#172115]">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-[#f3b743] text-[#181b20]">
                   <PhoneCall className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <span className="min-w-0">
                   <span className="block text-sm font-bold text-[#66706b]">
                     Call / emergency
                   </span>
-                  <span className="break-words text-2xl font-black text-[#14231d]">
+                  <span className="break-words text-2xl font-black text-[#181b20]">
                     {phoneDisplay}
                   </span>
                 </span>
@@ -553,7 +566,7 @@ export default function HomePage() {
                 </span>
                 <span>
                   <span className="block text-sm font-bold text-[#66706b]">Address</span>
-                  <span className="text-lg font-black text-[#14231d]">
+                  <span className="text-lg font-black text-[#181b20]">
                     Adarsh Nagar, Bhosari, PCMC 411039
                   </span>
                 </span>
@@ -576,7 +589,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
               href={phoneHref}
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#f3b743] px-4 text-sm font-black text-[#172115]"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#f3b743] px-4 text-sm font-black text-[#181b20]"
             >
               <PhoneCall className="h-4 w-4" aria-hidden="true" />
               फोन करा
@@ -592,21 +605,23 @@ export default function HomePage() {
         </div>
       </footer>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-white/16 bg-[#171a20]/96 p-3 text-white shadow-[0_-12px_32px_rgba(0,0,0,0.22)] backdrop-blur md:hidden">
-        <a
-          href={phoneHref}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#f3b743] text-sm font-black text-[#172115]"
-        >
-          <PhoneCall className="h-4 w-4" aria-hidden="true" />
-          Call
-        </a>
-        <a
-          href={whatsappHref}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/18 text-sm font-black"
-        >
-          <MessageCircle className="h-4 w-4" aria-hidden="true" />
-          WhatsApp
-        </a>
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/16 bg-[#171a20]/96 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-3 text-white shadow-[0_-12px_32px_rgba(0,0,0,0.22)] backdrop-blur md:hidden">
+        <div className="mx-auto grid w-full max-w-[22rem] grid-cols-2 gap-2">
+          <a
+            href={phoneHref}
+            className="inline-flex min-h-12 min-w-0 items-center justify-center gap-2 rounded-md bg-[#f3b743] px-2 text-sm font-black text-[#181b20]"
+          >
+            <PhoneCall className="h-4 w-4 shrink-0" aria-hidden="true" />
+            Call
+          </a>
+          <a
+            href={whatsappHref}
+            className="inline-flex min-h-12 min-w-0 items-center justify-center gap-2 rounded-md border border-white/18 px-2 text-sm font-black"
+          >
+            <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+            WhatsApp
+          </a>
+        </div>
       </div>
     </main>
   );

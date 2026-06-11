@@ -96,11 +96,11 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
           <p className="text-sm font-black text-[#a6531d]">Quick enquiry</p>
-          <h3 className="mt-2 text-2xl font-black leading-9 text-[#14231d] sm:text-3xl sm:leading-10">
+          <h3 className="mt-2 text-2xl font-black leading-9 text-[#181b20] sm:text-3xl sm:leading-10">
             कामाची माहिती पाठवा
           </h3>
           <p className="mt-2 text-sm leading-6 text-[#66706b]">
-            Form submit केल्यावर WhatsApp message तयार होईल.
+            Submit केल्यावर WhatsApp message तयार होईल.
           </p>
         </div>
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-[#1b1f26] text-[#f3b743]">
@@ -200,7 +200,7 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
         </button>
         <a
           href={phoneHref}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#c9bea5] px-5 text-sm font-black text-[#13251f] transition hover:bg-[#f4eedf]"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-[#c9bea5] px-5 text-sm font-black text-[#181b20] transition hover:bg-[#f4eedf]"
         >
           <PhoneCall className="h-4 w-4" aria-hidden="true" />
           थेट फोन
@@ -239,7 +239,7 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
         href={whatsappHref}
         className="mt-4 inline-flex text-sm font-black text-[#a6531d] underline decoration-[#e2bd79] underline-offset-4"
       >
-        Form नको असेल तर direct WhatsApp करा
+        Form नको असेल तर थेट WhatsApp करा
       </a>
     </form>
   );
