@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f3e6;
+  --foreground: #181b20;
+  --surface: #fffdfa;
+  --ink-soft: #5d6470;
+  --leaf: #2d5d84;
+  --copper: #a6531d;
+  --marigold: #f3b743;
+  --navy: #203954;
+  --line: #d9d4c4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Mukta", "Noto Sans Devanagari Variable",
+    "Noto Sans Devanagari", "Mangal", sans-serif;
+  --font-serif: "Noto Serif Devanagari Variable", "Noto Serif Devanagari",
+    "Kokila", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(75, 80, 88, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(75, 80, 88, 0.03) 1px, transparent 1px),
+    var(--background);
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    "Mukta", "Noto Sans Devanagari Variable", "Noto Sans Devanagari",
+    "Mangal", sans-serif;
+  font-size: 16px;
+  font-synthesis-weight: none;
+  letter-spacing: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--marigold);
+  color: var(--foreground);
+}
+
+.section-pad {
+  padding-block: 4rem;
+}
+
+.section-kicker {
+  color: var(--copper);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  color: var(--foreground);
+  font-family:
+    "Noto Serif Devanagari Variable", "Noto Serif Devanagari", "Kokila",
+    serif;
+  font-size: 2.15rem;
+  font-weight: 900;
+  line-height: 1.16;
+  text-wrap: balance;
+}
+
+@media (min-width: 640px) {
+  .section-pad {
+    padding-block: 5.75rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-block: 7rem;
+  }
+
+  .section-title {
+    font-size: 4rem;
+  }
+}
+
+.section-copy {
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.75;
+  margin-top: 1.2rem;
+  max-width: 66ch;
+}
+
+@media (min-width: 640px) {
+  .section-copy {
+    font-size: 1.18rem;
+  }
+}
+
+.field-label {
+  color: #24362f;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 900;
+  gap: 0.45rem;
+  line-height: 1.45;
+}
+
+.field-control {
+  background: #fbf8f0;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 3rem;
+  outline: none;
+  padding: 0.85rem 0.95rem;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+  width: 100%;
+}
+
+.field-control:focus {
+  background: #ffffff;
+  border-color: var(--leaf);
+  box-shadow: 0 0 0 3px rgba(45, 93, 132, 0.16);
+}
+
+.field-control::placeholder {
+  color: #898f89;
 }
