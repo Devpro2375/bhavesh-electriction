@@ -9,11 +9,12 @@ export function LocalTrustSection() {
         <div>
           <p className="section-kicker">Local trust</p>
           <h2 className="section-title">
-            भोसरी base, Pune आणि PCMC मध्ये service.
+            भोसरी base, Pune आणि PCMC मध्ये trusted electrician.
           </h2>
           <p className="section-copy">
-            Adarsh Nagar, Bhosari येथून घर, दुकान, ऑफिस आणि सोसायटीसाठी visit
-            केली जाते. जवळचा भाग असेल तर timing लवकर मिळू शकते.
+            Adarsh Nagar, Bhosari येथून electrician in Pune, Bhosari आणि
+            Pimpri-Chinchwad साठी घर, दुकान, ऑफिस आणि सोसायटी visit केली जाते.
+            जवळचा भाग असेल तर timing लवकर मिळू शकते.
           </p>
         </div>
 

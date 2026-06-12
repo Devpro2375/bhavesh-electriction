@@ -5,12 +5,12 @@ import "@fontsource/mukta/600.css";
 import "@fontsource/mukta/700.css";
 import "@fontsource-variable/noto-sans-devanagari";
 import "@fontsource-variable/noto-serif-devanagari";
-import { absoluteUrl, business, siteUrl } from "@/lib/business";
+import { absoluteUrl, business, seoKeywords, siteUrl } from "@/lib/business";
 import "./globals.css";
 
-const title = "Bhavesh Electrician, Bhosari | 24 तास Pune Electrician";
+const title = "Electrician in Pune & Bhosari | Bhavesh Electrician";
 const description =
-  "भोसरी, पिंपरी-चिंचवड आणि पुणे परिसरात 24 तास electrician service. Wiring, MCB, switchboard, fan-light fitting, inverter, earthing आणि emergency repair साठी फोन करा.";
+  "Bhavesh Electrician Bhosari: पुणे व PCMC मध्ये 24 तास electrician service. Wiring, MCB repair, switchboard, fan-light, inverter, earthing साठी फोन करा.";
 const ogImage = "/images/optimized/hero-bhavesh-electrician.jpg";
 
 export const metadata: Metadata = {
@@ -21,17 +21,7 @@ export const metadata: Metadata = {
     template: `%s | ${business.name}`,
   },
   description,
-  keywords: [
-    "Bhavesh Electrician Bhosari",
-    "electrician in Bhosari",
-    "electrician in Pune",
-    "Pimpri Chinchwad electrician",
-    "emergency electrician Pune",
-    "MCB repair Bhosari",
-    "switchboard repair Pune",
-    "भोसरी इलेक्ट्रिशियन",
-    "पुणे electrician",
-  ],
+  keywords: ["Bhavesh Electrician Bhosari", ...seoKeywords],
   alternates: {
     canonical: "/",
   },
@@ -52,7 +42,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1600,
         height: 854,
-        alt: "Bhavesh Electrician Bhosari electrical service",
+        alt: "Bhavesh Electrician Bhosari electrician service in Pune and PCMC",
       },
     ],
   },
@@ -75,7 +65,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "IN-MH",
-    "geo.placename": "Bhosari, Pimpri-Chinchwad",
+    "geo.placename": "Bhosari, Pimpri-Chinchwad, Pune",
     "business:contact_data:locality": "Bhosari",
     "business:contact_data:region": "Maharashtra",
     "business:contact_data:postal_code": business.address.postalCode,

@@ -23,10 +23,11 @@ export function ServicesSection() {
         <div className="mt-10 grid grid-cols-1 gap-7 lg:grid-cols-[0.75fr_1.25fr] lg:gap-10">
           <div>
             <p className="section-kicker">सेवा</p>
-            <h2 className="section-title">कोणते electrical काम आहे ते लगेच कळेल.</h2>
+            <h2 className="section-title">Pune आणि PCMC साठी electrical service स्पष्ट दिसेल.</h2>
             <p className="section-copy">
-              घरातील छोटा fault असो किंवा दुकान-ऑफिसचे काम, आधी समस्या स्पष्ट
-              समजून घेतली जाते आणि मग योग्य उपाय सांगितला जातो.
+              Electrician in Pune, electrician in Bhosari किंवा emergency electrician Pune
+              शोधत असाल तर खालील कामांमधून थेट WhatsApp enquiry करा. आधी समस्या
+              स्पष्ट समजून घेतली जाते आणि मग योग्य उपाय सांगितला जातो.
             </p>
 
             <div className="mt-6 rounded-lg border border-[#d7c9ab] bg-[#181b20] p-4 text-white shadow-[0_14px_34px_rgba(24,27,32,0.12)]">

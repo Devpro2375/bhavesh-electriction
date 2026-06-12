@@ -62,7 +62,7 @@ export function HeroSection() {
           <div className="mx-auto w-full min-w-0 max-w-[calc(100vw-2rem)] sm:max-w-[34rem] md:max-w-[40rem] lg:mx-0 lg:max-w-3xl">
             <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-md border border-white/16 bg-white/8 px-3 py-2 text-[0.86rem] font-bold leading-5 text-white/84 backdrop-blur sm:text-sm sm:leading-6">
               <MapPin className="h-4 w-4 shrink-0 text-[#f4be52]" aria-hidden="true" />
-              भोसरी, पिंपरी-चिंचवड आणि पुणे परिसर
+              Electrician in Pune, Bhosari, PCMC
             </div>
 
             <h1 className="w-full max-w-[10.5ch] font-serif text-[clamp(2.08rem,8vw,2.22rem)] font-black leading-[1.04] text-[#fffaf0] [text-shadow:0_3px_18px_rgba(0,0,0,0.45)] sm:text-5xl sm:leading-[1.06] md:text-6xl lg:text-7xl">
@@ -70,10 +70,10 @@ export function HeroSection() {
             </h1>
             <div className="mt-3 h-1 w-20 rounded-full bg-[#f4be52]" />
             <p className="mt-4 w-full max-w-full text-[0.98rem] font-semibold leading-7 text-white/88 [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:max-w-2xl sm:text-xl sm:leading-9">
-              <span className="block sm:inline">घर, दुकान, ऑफिस आणि सोसायटीसाठी</span>{" "}
-              <span className="block sm:inline">विश्वासार्ह इलेक्ट्रिशियन सेवा.</span>{" "}
-              <span className="block sm:inline">Wiring, MCB, फॅन-लाईट फिटिंग,</span>{" "}
-              <span className="block sm:inline">इन्व्हर्टर, अर्थिंग आणि urgent repair.</span>
+              <span className="block sm:inline">भोसरी, पिंपरी-चिंचवड, PCMC आणि पुणे शहरात</span>{" "}
+              <span className="block sm:inline">घर, दुकान, ऑफिस आणि सोसायटीसाठी electrician service.</span>{" "}
+              <span className="block sm:inline">Wiring, MCB repair, switchboard, फॅन-लाईट फिटिंग,</span>{" "}
+              <span className="block sm:inline">इन्व्हर्टर, अर्थिंग आणि emergency repair.</span>
               <span className="mt-2 inline-flex rounded bg-white/10 px-2.5 py-1 font-black text-white">
                 24 तास फोन उपलब्ध.
               </span>

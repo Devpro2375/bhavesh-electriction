@@ -13,10 +13,11 @@ export function ContactSection() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-9 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
         <div>
           <p className="section-kicker">संपर्क</p>
-          <h2 className="section-title">Urgent काम असेल तर थेट फोन करा.</h2>
+          <h2 className="section-title">Pune किंवा Bhosari मध्ये urgent काम असेल तर फोन करा.</h2>
           <p className="section-copy">
-            Routine कामासाठी form भरा. Submit केल्यावर WhatsApp message तयार
-            होईल, त्यामुळे details पुन्हा type कराव्या लागणार नाहीत.
+            Emergency electrician Pune, MCB repair, wiring किंवा fan-light fitting
+            साठी थेट कॉल करा. Routine कामासाठी form भरा; submit केल्यावर WhatsApp
+            message तयार होईल, त्यामुळे details पुन्हा type कराव्या लागणार नाहीत.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-4">

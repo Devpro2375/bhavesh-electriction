@@ -2,17 +2,37 @@ import { MapPin, Navigation, PhoneCall } from "lucide-react";
 import { business, directionsHref, phoneHref } from "@/lib/business";
 import { serviceAreas } from "@/lib/home-data";
 
+const localSearchPhrases = [
+  "Electrician in Pune",
+  "Electrician in Bhosari",
+  "24 hours electrician Pune",
+  "MCB repair Pune",
+  "Wiring electrician PCMC",
+  "पुणे इलेक्ट्रिशियन",
+];
+
 export function AreasSection() {
   return (
     <section id="areas" className="section-pad bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-9 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
         <div>
           <p className="section-kicker">सेवा परिसर</p>
-          <h2 className="section-title">या भागांत electrician service.</h2>
+          <h2 className="section-title">Pune, Bhosari आणि PCMC मध्ये electrician service.</h2>
           <p className="section-copy">
             तुमचा area खालील list मध्ये नसेल तरी फोन करा. कामाचा प्रकार, अंतर
             आणि वेळ पाहून visit बद्दल स्पष्ट सांगितले जाईल.
           </p>
+
+          <div className="mt-5 flex flex-wrap gap-2" aria-label="Popular local searches">
+            {localSearchPhrases.map((phrase) => (
+              <span
+                key={phrase}
+                className="rounded-md border border-[#d9d4c4] bg-[#fff8e6] px-3 py-2 text-sm font-black text-[#303946]"
+              >
+                {phrase}
+              </span>
+            ))}
+          </div>
 
           <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <a
