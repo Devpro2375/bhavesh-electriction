@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "भोसरी इलेक्ट्रिशियन",
     "पुणे electrician",
   ],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   openGraph: {
     title: "Bhavesh Electrician, Bhosari",
     description:

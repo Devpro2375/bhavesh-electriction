@@ -16,7 +16,6 @@ import {
   ShieldCheck,
   Star,
   Store,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { EnquiryForm } from "@/components/EnquiryForm";
@@ -182,24 +181,32 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative isolate min-h-[690px] w-full max-w-[100vw] overflow-hidden bg-[#181b20] text-white sm:min-h-[760px] md:min-h-[86svh]">
+      <section className="relative isolate min-h-[690px] w-full max-w-[100vw] overflow-hidden bg-[#101317] text-white sm:min-h-[760px] md:min-h-[86svh]">
         <Image
           src="/images/hero-bhaavesh-electrician-v2.png"
           alt="भोसरीमध्ये electrical panel तपासत असलेले Bhavesh Electrician"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[72%_center] md:object-center"
+          className="object-cover object-[72%_center] opacity-72 sm:opacity-78 md:object-center md:opacity-100"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,21,26,0.98)_0%,rgba(18,21,26,0.88)_58%,rgba(18,21,26,0.46)_100%)] md:bg-[linear-gradient(90deg,rgba(18,21,26,0.94)_0%,rgba(18,21,26,0.74)_44%,rgba(18,21,26,0.28)_78%,rgba(18,21,26,0.18)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_50%,rgba(243,183,67,0.14),transparent_34%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(0deg,rgba(18,21,26,0.92),rgba(18,21,26,0))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,19,23,0.76)_0%,rgba(16,19,23,0.58)_58%,rgba(16,19,23,0.22)_100%)] md:bg-[linear-gradient(90deg,rgba(16,19,23,0.96)_0%,rgba(16,19,23,0.78)_48%,rgba(16,19,23,0.34)_82%,rgba(16,19,23,0.2)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_42%,rgba(244,190,82,0.1),transparent_36%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-[linear-gradient(0deg,rgba(16,19,23,0.68),rgba(16,19,23,0))]" />
 
         <div className="relative z-10 mx-auto flex min-h-[690px] w-full max-w-7xl flex-col overflow-hidden px-4 py-4 sm:min-h-[760px] sm:px-6 md:min-h-[86svh] lg:px-10">
           <header className="flex items-center justify-between gap-3">
             <a href="#top" className="flex min-w-0 items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/24 bg-white/12 backdrop-blur">
-                <Zap className="h-5 w-5 text-[#f3b743]" aria-hidden="true" />
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border-2 border-[#f4be52] bg-[#121a27] p-1 shadow-[0_6px_0_rgba(0,0,0,0.24)]">
+                <Image
+                  src="/bhavesh-electrician-logo.png"
+                  alt="Bhavesh Electrician logo"
+                  width={44}
+                  height={44}
+                  priority
+                  unoptimized
+                  className="h-10 w-10"
+                />
               </span>
               <span className="min-w-0 leading-tight">
                 <span className="block truncate text-base font-black sm:text-lg">
@@ -233,30 +240,44 @@ export default function HomePage() {
             </a>
           </header>
 
-          <div id="top" className="flex w-full min-w-0 flex-1 items-center py-8 sm:py-16 md:py-20">
-            <div className="w-full min-w-0 max-w-full sm:max-w-[38rem] md:max-w-3xl">
-              <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-md border border-white/22 bg-white/10 px-3 py-2 text-[0.88rem] font-bold leading-5 text-white/88 backdrop-blur sm:text-sm sm:leading-6">
-                <MapPin className="h-4 w-4 shrink-0 text-[#f3b743]" aria-hidden="true" />
+          <div
+            id="top"
+            className="flex w-full min-w-0 flex-1 items-center justify-center py-8 sm:py-16 md:py-20 lg:justify-start"
+          >
+            <div className="mx-auto w-full min-w-0 max-w-[calc(100vw-2rem)] sm:max-w-[34rem] md:max-w-[40rem] lg:mx-0 lg:max-w-3xl">
+              <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-md border border-white/16 bg-white/8 px-3 py-2 text-[0.86rem] font-bold leading-5 text-white/84 backdrop-blur sm:text-sm sm:leading-6">
+                <MapPin className="h-4 w-4 shrink-0 text-[#f4be52]" aria-hidden="true" />
                 भोसरी, पिंपरी-चिंचवड आणि पुणे परिसर
               </div>
 
-              <h1 className="w-full max-w-[21rem] font-serif text-[clamp(2rem,8.2vw,2.18rem)] font-black leading-[1.06] text-white sm:max-w-3xl sm:text-5xl md:text-6xl lg:max-w-4xl lg:text-7xl">
-                <span className="block">Bhavesh Electrician</span>
-                <span className="block text-[#f3b743]">Bhosari</span>
+              <h1 className="w-full max-w-full font-serif text-[clamp(2.08rem,8vw,2.22rem)] font-black leading-[1.04] text-[#fffaf0] [text-shadow:0_3px_18px_rgba(0,0,0,0.45)] sm:max-w-3xl sm:text-5xl sm:leading-[1.06] md:text-6xl lg:max-w-4xl lg:text-7xl">
+                <span className="block">Bhavesh</span>
+                <span className="block">Electrician</span>
+                <span className="block">Bhosari</span>
               </h1>
-              <p className="mt-4 w-full max-w-[21.5rem] text-[0.98rem] font-semibold leading-7 text-white/90 sm:max-w-2xl sm:text-xl sm:leading-9">
-                घर, दुकान, ऑफिस आणि सोसायटीसाठी विश्वासार्ह इलेक्ट्रिशियन सेवा.
-                Wiring, MCB, फॅन-लाईट फिटिंग, इन्व्हर्टर, अर्थिंग आणि urgent
-                repair.
-                <span className="mt-1 block font-black text-white">
+              <div className="mt-3 h-1 w-20 rounded-full bg-[#f4be52]" />
+              <p className="mt-4 w-full max-w-full text-[0.98rem] font-semibold leading-7 text-white/88 [text-shadow:0_2px_14px_rgba(0,0,0,0.42)] sm:max-w-2xl sm:text-xl sm:leading-9">
+                <span className="block sm:inline">
+                  घर, दुकान, ऑफिस आणि सोसायटीसाठी
+                </span>{" "}
+                <span className="block sm:inline">
+                  विश्वासार्ह इलेक्ट्रिशियन सेवा.
+                </span>{" "}
+                <span className="block sm:inline">
+                  Wiring, MCB, फॅन-लाईट फिटिंग,
+                </span>{" "}
+                <span className="block sm:inline">
+                  इन्व्हर्टर, अर्थिंग आणि urgent repair.
+                </span>
+                <span className="mt-2 inline-flex rounded bg-white/10 px-2.5 py-1 font-black text-white">
                   24 तास फोन उपलब्ध.
                 </span>
               </p>
 
-              <div className="mt-6 grid w-full max-w-[21.5rem] grid-cols-1 gap-2.5 sm:max-w-xl sm:grid-cols-2 sm:gap-3">
+              <div className="mt-6 grid w-full max-w-full grid-cols-1 gap-2.5 sm:max-w-xl sm:grid-cols-2 sm:gap-3">
                 <a
                   href={phoneHref}
-                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-[#f3b743] px-5 text-base font-black text-[#181b20] transition hover:bg-[#ffd06a] sm:min-h-14"
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-[#f4be52] px-5 text-base font-black text-[#111317] shadow-[0_16px_36px_rgba(0,0,0,0.28)] transition hover:bg-[#ffd06a] sm:min-h-14"
                 >
                   <PhoneCall className="h-5 w-5" aria-hidden="true" />
                   आता फोन करा
@@ -264,24 +285,24 @@ export default function HomePage() {
                 </a>
                 <a
                   href={whatsappHref}
-                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-white/28 bg-white/12 px-5 text-base font-black text-white backdrop-blur transition hover:bg-white/20 sm:min-h-14"
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-white/18 bg-white/8 px-5 text-base font-black text-white backdrop-blur transition hover:bg-white/14 sm:min-h-14"
                 >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   WhatsApp करा
                 </a>
               </div>
 
-              <div className="mt-5 grid w-full max-w-[21.5rem] grid-cols-1 gap-2.5 sm:mt-8 sm:max-w-2xl sm:grid-cols-3 sm:gap-3">
-                <div className="rounded-md border border-white/14 bg-white/10 p-4 backdrop-blur">
-                  <p className="text-sm text-white/64">फोन नंबर</p>
+              <div className="mt-5 grid w-full max-w-full grid-cols-1 gap-2.5 sm:mt-8 sm:max-w-2xl sm:grid-cols-3 sm:gap-3">
+                <div className="rounded-md border border-white/10 bg-[#1b2027]/92 p-4 shadow-[0_10px_28px_rgba(0,0,0,0.16)]">
+                  <p className="text-sm font-bold text-white/58">फोन नंबर</p>
                   <p className="mt-1 text-lg font-black">{phoneDisplay}</p>
                 </div>
-                <div className="rounded-md border border-white/14 bg-white/10 p-4 backdrop-blur">
-                  <p className="text-sm text-white/64">सेवा वेळ</p>
+                <div className="rounded-md border border-white/10 bg-[#1b2027]/92 p-4 shadow-[0_10px_28px_rgba(0,0,0,0.16)]">
+                  <p className="text-sm font-bold text-white/58">सेवा वेळ</p>
                   <p className="mt-1 text-lg font-black">24 तास</p>
                 </div>
-                <div className="rounded-md border border-white/14 bg-white/10 p-4 backdrop-blur">
-                  <p className="text-sm text-white/64">पत्ता</p>
+                <div className="rounded-md border border-white/10 bg-[#1b2027]/92 p-4 shadow-[0_10px_28px_rgba(0,0,0,0.16)]">
+                  <p className="text-sm font-bold text-white/58">पत्ता</p>
                   <p className="mt-1 text-lg font-black">Adarsh Nagar</p>
                 </div>
               </div>
