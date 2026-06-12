@@ -164,6 +164,8 @@ textarea {
 
 .service-card {
   animation: service-card-in 560ms cubic-bezier(0.2, 0.78, 0.28, 1) both;
+  min-height: 24.35rem;
+  position: relative;
   transform-origin: center bottom;
   transition:
     border-color 220ms ease,
@@ -171,9 +173,37 @@ textarea {
     background-color 220ms ease;
 }
 
+.service-card::before {
+  background: var(--marigold);
+  content: "";
+  height: 3px;
+  inset: 0 0 auto;
+  position: absolute;
+  z-index: 2;
+}
+
+.service-card-title {
+  display: -webkit-box;
+  min-height: 3rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .service-card-copy {
   display: -webkit-box;
   min-height: 3rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.service-card-points {
+  min-height: 4.15rem;
+}
+
+.service-card-point span {
+  display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -192,11 +222,17 @@ textarea {
   .service-card:hover {
     background-color: #fffefb;
     border-color: #cbbd9f;
-    box-shadow: 0 16px 38px rgba(24, 27, 32, 0.1);
+    box-shadow: 0 14px 30px rgba(24, 27, 32, 0.09);
   }
 
   .service-card:hover .service-card-image {
     transform: scale(1.015);
+  }
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    min-height: 24.75rem;
   }
 }
 

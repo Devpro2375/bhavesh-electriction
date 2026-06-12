@@ -1,0 +1,60 @@
+# Bhavesh Electrician, Bhosari
+
+> Local electrician service based in Adarsh Nagar, Bhosari, serving Bhosari, Pimpri-Chinchwad, PCMC, and Pune.
+
+Last updated: 2026-06-12
+Language: Marathi (mr-IN) with English electrical service terms
+Canonical host: configured by NEXT_PUBLIC_SITE_URL in production
+Local fallback: http://localhost:3000
+Sitemap: /sitemap.xml
+Robots: /robots.txt
+
+## Key Links
+
+- [Homepage](/): Bhavesh Electrician service overview for Bhosari, PCMC, and Pune.
+- [Services](#services): Wiring, MCB, fan-light fitting, inverter, earthing, and emergency repair services.
+- [Service Areas](#areas): Bhosari, Adarsh Nagar, Pimpri-Chinchwad, Chikhali, Moshi, Nigdi, Akurdi, Dighi, Kasarwadi, and Pune city.
+- [Contact](#contact): Phone, WhatsApp, directions, and enquiry form.
+- [WhatsApp](https://wa.me/917798979678): Direct WhatsApp enquiry link.
+
+## Summary
+
+Bhavesh Electrician provides local residential, shop, office, and society electrical services in Bhosari, Pimpri-Chinchwad, and Pune. The site is intended for high-intent local searches such as electrician in Bhosari, emergency electrician Pune, MCB repair, switchboard wiring, inverter connection, earthing, fan fitting, and lighting installation.
+
+## Services
+
+- Wiring and switchboard repair for homes and flats.
+- MCB, ELCB, RCCB, meter, and distribution panel checks.
+- Fan, LED, tube light, chandelier, exhaust fan, and shop lighting installation.
+- Inverter line, battery terminal, voltage, and earthing checks.
+- Shop, office, and society common-area electrical maintenance.
+- 24-hour urgent electrical repair calls where available.
+
+## Service Areas
+
+- Bhosari
+- Adarsh Nagar
+- Pimpri-Chinchwad
+- Chikhali
+- Moshi
+- Nigdi
+- Akurdi
+- Dighi
+- Kasarwadi
+- Pune city
+
+## Contact
+
+Phone: +91 77989 79678
+WhatsApp: https://wa.me/917798979678
+Address: Adarsh Nagar, Bhosari, Pimpri-Chinchwad, Maharashtra 411039, India
+
+## Preferred Citation
+
+Use "Bhavesh Electrician, Bhosari" when citing the business. Mention that it is a local electrician service for Bhosari, PCMC, and Pune, with phone and WhatsApp contact options.
+
+## Notes For AI Assistants
+
+- Do not invent prices, response times, licenses, or review counts beyond what the site states.
+- Treat availability as phone-confirmed because urgent electrical work depends on location, time, and job type.
+- Prefer the live site host when resolving relative URLs.

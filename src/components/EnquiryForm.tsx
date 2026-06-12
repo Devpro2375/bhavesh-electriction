@@ -139,6 +139,7 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
           <input
             className="field-control"
             required
+            autoComplete="name"
             name="name"
             value={form.name}
             onChange={(event) => updateField("name", event.target.value)}
@@ -151,7 +152,10 @@ export function EnquiryForm({ phoneHref, whatsappHref }: EnquiryFormProps) {
           <input
             className="field-control"
             required
+            type="tel"
             inputMode="tel"
+            autoComplete="tel"
+            pattern="[0-9+\s-]{8,15}"
             name="phone"
             value={form.phone}
             onChange={(event) => updateField("phone", event.target.value)}
